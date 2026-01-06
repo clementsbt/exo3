@@ -24,6 +24,24 @@
       <h1>Bonjour 👋</h1>
       <p>Contenu principal ici.</p>
     </main>
+    
+<input id="saisieBin" type="text" placeholder="Texte à convertir en binaire"><br>
+<button onclick="convertirBin()">Convertir</button>
+<p id="outputBin"></p>
+
+<script>
+  function convertirBin() {
+    let texte = document.getElementById("saisieBin").value;
+    let resultat = document.getElementById("outputBin");
+
+    resultat.textContent = ""; // reset du <p>
+
+    for (let i = 0; i < texte.length; i++) {
+      resultat.textContent += texte[i].charCodeAt(0).toString(2) + " ";
+    }
+  }
+</script>
+
 
     <footer>
       <small>&copy; <span id="year"></span> Mon site</small>
