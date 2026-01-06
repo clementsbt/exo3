@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
@@ -23,15 +23,35 @@
     <main id="main">
       <h1>Bonjour 👋</h1>
       <p>Contenu principal ici.</p>
+
+      <h2>Base 64 :</h2>
+      <div id="base64Container">
+        <button id="b64ConvertBtn" onclick="base64Convert()">Convertir le texte en base 64</button>
+        <input type="text" placeholder="Entrez votre texte ici" id="base64Input" />
+      </div>
     </main>
 
     <footer>
-      <small>&copy; <span id="year"></span> Mon site</small>
+      <small>
+        &copy;
+        <span id="year"></span>
+        Mon site
+      </small>
     </footer>
 
     <script>
       // Petit bonus: année automatique
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Convertion en base 64
+
+      const base64Input = document.getElementById("base64Input");
+
+      function base64Convert() {
+        const value = base64Input.value;
+        const encodedValue = window.btoa(value);
+        base64Input.value = encodedValue;
+      }
     </script>
   </body>
 </html>
